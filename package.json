@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-tdd",
+  "version": "1.0.0",
+  "description": "인프런 「테스트주도개발(TDD)로 만드는 NodeJS API 서버」 강의 실습 소스코드",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jisue/NodeJS-TDD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jisue/NodeJS-TDD/issues"
+  },
+  "homepage": "https://github.com/Jisue/NodeJS-TDD#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
