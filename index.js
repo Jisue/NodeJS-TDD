@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan')
 
-const users = [
+let users = [
     {id: 1, name: 'aa'},
     {id: 2, name: 'bb'},
     {id: 3, name: 'cc'}
@@ -25,11 +25,22 @@ app.get('/users/:id', function(req, res) {
     // id가 숫자가 아닌 경우 400
     if(Number.isNaN(id)) return res.status(400).end();
 
-    const user = users.filter((user) => user.id === id)[0];
+    const user = users.filter(user => user.id === id)[0];
     //user를 찾을수 없으면 404
     if(!user) return res.status(404).end();
 
     res.json(user);
+})
+
+app.delete('/users/:id', function(req, res) {
+    const id = parseInt(req.params.id);
+
+    // id가 숫자가 아닌 경우 400
+    if(Number.isNaN(id)) return res.status(400).end();
+
+    users = users.filter(user => user.id !== id);
+
+    res.status(204).end();
 })
 
 app.listen(3000, function() {
