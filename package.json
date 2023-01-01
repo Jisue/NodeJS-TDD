@@ -4,7 +4,7 @@
   "description": "인프런 「테스트주도개발(TDD)로 만드는 NodeJS API 서버」 강의 실습 소스코드",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha index.spec.js",
     "start": "node index.js"
   },
   "repository": {
