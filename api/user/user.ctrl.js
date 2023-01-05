@@ -50,9 +50,15 @@ const destroy = function(req, res) {
     // id가 숫자가 아닌 경우 400
     if(Number.isNaN(id)) return res.status(400).end();
 
-    users = users.filter(user => user.id !== id);
+    models.User.destroy({
+        where: {id}
+    }).then(() => {
+        res.status(204).end();
+    })
 
-    res.status(204).end();
+    // users = users.filter(user => user.id !== id);
+
+    // res.status(204).end();
 }
 
 const create = (req, res) => {
