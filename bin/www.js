@@ -1,6 +1,10 @@
 // app을 가져와서 서버를 구동
 const app = require('../index');
+const syncDB = require('./sync-db');
 
-app.listen(3000, () => {
-    console.log('Server is running on 3000 port');
-});
+syncDB().then(_=> {
+    console.log('Sync database!');
+    app.listen(3000, () => {
+        console.log('Server is running on 3000 port');
+    });
+})
