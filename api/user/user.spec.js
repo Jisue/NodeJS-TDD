@@ -4,7 +4,7 @@ const should = require('should');
 const app = require('../../');
 const models = require('../../models');
 
-describe.only('GET /users는', ()=> {
+describe('GET /users는', ()=> {
     describe('성공시', ()=> {
         // 모델 싱크
         const users = [
@@ -44,7 +44,7 @@ describe.only('GET /users는', ()=> {
     })
 })
 
-describe('GET /users/:id는', ()=> {
+describe.only('GET /users/:id는', ()=> {
     describe('성공시', ()=> {
         it('id가 1인 유저 객체를 반환한다', (done)=> {
             request(app)
